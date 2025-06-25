@@ -111,4 +111,14 @@ jobs:
       run: |
         source $GITHUB_WORKSPACE/action_util.sh
         webdav_upload $APP_UPLOAD/*.apk
-        
+
+    - name: create release
+      uses: softprops/action-gh-release@v1
+      if: success()
+      with:
+        tag_name: ${{ github.event.inputs.git_tag }}
+        name: Release ${{ github.event.inputs.git_tag }}
+        body: Automated release of LegadoCustom app with tag ${{ github.event.inputs.git_tag }}.
+        files: ${{ env.APP_UPLOAD }}/*.apk
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
