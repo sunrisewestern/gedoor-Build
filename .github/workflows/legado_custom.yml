@@ -10,7 +10,7 @@ on:
       git_tag:
         description: 'Your legado git tag'      
         required: true 
-        default: '3.23.110211'
+        default: '3.25'
       app_channel:
         description: 'Your legado build channel(App)'      
         required: true 
@@ -23,14 +23,14 @@ on:
         description: 'Legado app name'      
         required: true 
         default: '阅读'
-      app_suffix: 
-        description: 'Legado app suffix'      
-        required: true 
-        default: 'A'
+      # app_suffix: 
+      #   description: 'Legado app suffix'      
+      #   required: true 
+      #   default: 'A'
       app_launch_name: 
         description: 'Legado app launch name'      
         required: true 
-        default: '阅读.A'
+        default: '阅读'
       webdav_upload: 
         description: 'Webdav upload when build apk finish'      
         required: true
